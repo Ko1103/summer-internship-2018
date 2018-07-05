@@ -8,7 +8,7 @@ target 'githubAPISample' do
   use_frameworks!
   
   pod 'Alamofire'
-
+  pod 'SwiftyJSON'
   target 'githubAPISampleTests' do
     inherit! :search_paths
     # Pods for testing

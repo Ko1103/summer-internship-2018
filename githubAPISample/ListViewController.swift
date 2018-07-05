@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -18,19 +19,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         DispatchQueue.global().async {
             Alamofire.request("https://api.github.com/events").responseJSON { (response) in
-                if let data = response.data {
-                    let decoder: JSONDecoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let data = response.result.value else { return }
+                let jsonData = JSON(data)
+                jsonData.forEach({ (_, json) in
+                    let decoder = JSONDecoder()
                     do {
-                        let newRepos = try decoder.decode([Repo].self, from: data)
-                        self.repos = newRepos
+                        let repo = try? decoder.decode(Repo.self, from: json["repo"].rawData())
+                        self.repos.append(repo!)
                     } catch {
-                        print("fatal to get Repos")
+                        print("fail to get data")
                     }
+                })
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
             }
         }
     }
@@ -40,9 +42,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = ""
-        cell.detailTextLabel?.text = ""
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let data = self.repos[indexPath.row]
+        cell.textLabel?.text = String(data.id)
+        cell.detailTextLabel?.text = data.name
         return cell
     }
     
