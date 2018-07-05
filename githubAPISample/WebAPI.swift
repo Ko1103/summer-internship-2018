@@ -12,14 +12,17 @@ import Alamofire
 
 class WebAPI {
     
-    static func get() {
-        Alamofire.request("https://api.github.com/events").responseJSON { (response) in
+    static func get(path: String) -> Data? {
+        var data: Data? = nil
+        Alamofire.request("https://api.github.com/events" + "path").responseJSON { (response) in
             print("Request" + String(describing: response.result))
             print("Request" + String(describing: response.response))
             if let json = response.result.value {
                 print("JSON: \(json)")
             }
+            data = response.data
         }
+        return data
     }
 }
 
