@@ -11,19 +11,18 @@ import Alamofire
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    private var repos:[Event] = []
+    private var repos: [Repo] = []
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.global().async {
             Alamofire.request("https://api.github.com/events").responseJSON { (response) in
-                print(response.result.value)
                 if let data = response.data {
                     let decoder: JSONDecoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
                     do {
-                        let newRepos = try decoder.decode([Event].self, from: data)
-                        print(newRepos)
+                        let newRepos = try decoder.decode([Repo].self, from: data)
                         self.repos = newRepos
                     } catch {
                         print("fatal to get Repos")

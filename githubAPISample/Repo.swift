@@ -9,27 +9,23 @@
 import Foundation
 
 
-struct Event: Codable {
-    var id: String
-    var type: String
-    var actor: Actor
-    var repo: Repo
-    var payload: Payload
-    var publicStatus: Bool
-    var created_at: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case publicStatus = "public"
-    }
-}
+//struct Event: Codable {
+//    var id: String
+//    var type: String
+//    var actor: Actor
+//    var repo: Repo
+//    var payload: Payload
+//    var publicStatus: Bool
+//    var createdAt: String
+//}
 
 struct Actor {
     var id: Int
     var login: String
-    var display_login: String
-    var gravatar_id: String
+    var displayLogin: String
+    var gravatarId: String
+    var avatarUrl: String
     var url: String
-    var avatar_url: String
 }
 
 struct Repo: Codable {
@@ -40,9 +36,9 @@ struct Repo: Codable {
 
 struct Payload: Codable {
     var ref: String?
-    var ref_type: String
-    var master_branch: String
+    var refType: String
+    var masterBranch: String
     var description: String
-    var pusher_type: String
+    var pusherType: String
 }
 
