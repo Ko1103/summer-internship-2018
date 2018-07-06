@@ -11,7 +11,6 @@ import Alamofire
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    private var repos: [Repo] = []
     private var users: [User] = []
     @IBOutlet weak var tableView: UITableView!
     
@@ -61,7 +60,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let next: DetailViewController = segue.destination as! DetailViewController
             next.name = sender as! String
         }
-        
     }
 }
 

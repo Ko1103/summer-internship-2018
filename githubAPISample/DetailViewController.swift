@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     var name: String?
     var user: User?
     @IBOutlet private weak var idLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet private weak var followURLLabel: UILabel!
     @IBOutlet private weak var followedURLLabel: UILabel!
     
@@ -34,7 +35,8 @@ class DetailViewController: UIViewController {
                         DispatchQueue.main.async {
                             if let user = self.user {
                                 self.idLabel.text = "ID: " + String(user.id)
-                                self.followURLLabel.text = "名前：" + user.login
+                                self.nameLabel.text = "名前：" + user.login
+                                self.followURLLabel.text = "フォロー：" + user.followingUrl
                                 self.followedURLLabel.text = "フォロワー" + user.followersUrl
                             }
                         }
