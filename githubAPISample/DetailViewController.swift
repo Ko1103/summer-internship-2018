@@ -14,9 +14,9 @@ import SwiftyJSON
 class DetailViewController: UIViewController {
 
     var targetURL: String?
-    @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var followURLLabel: UILabel!
-    @IBOutlet weak var followedURLLabel: UILabel!
+    @IBOutlet private weak var idLabel: UILabel!
+    @IBOutlet private weak var followURLLabel: UILabel!
+    @IBOutlet private weak var followedURLLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,5 @@ class DetailViewController: UIViewController {
                 }
             }
         }
-       
     }
 }
