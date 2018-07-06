@@ -13,7 +13,6 @@
 		E65E2CD520EDF7C100EB134B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CD420EDF7C100EB134B /* DetailViewController.swift */; };
 		E65E2CD720EDF99500EB134B /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CD620EDF99500EB134B /* Repo.swift */; };
 		E65E2CDB20EFBC9000EB134B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CDA20EFBC9000EB134B /* Constants.swift */; };
-		E65E2CDD20EFBDE100EB134B /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CDC20EFBDE100EB134B /* APIConfiguration.swift */; };
 		E65E2CDF20EFC04500EB134B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CDE20EFC04500EB134B /* User.swift */; };
 		E66C128220EDE81C00AB3A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C128120EDE81C00AB3A22 /* AppDelegate.swift */; };
 		E66C128420EDE81C00AB3A22 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C128320EDE81C00AB3A22 /* ListViewController.swift */; };
@@ -54,7 +53,6 @@
 		E65E2CD420EDF7C100EB134B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E65E2CD620EDF99500EB134B /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		E65E2CDA20EFBC9000EB134B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E65E2CDC20EFBDE100EB134B /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		E65E2CDE20EFC04500EB134B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E66C127E20EDE81C00AB3A22 /* githubAPISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubAPISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66C128120EDE81C00AB3A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				E66C128A20EDE81E00AB3A22 /* LaunchScreen.storyboard */,
 				E66C128D20EDE81E00AB3A22 /* Info.plist */,
 				E66C12AF20EDEA9400AB3A22 /* WebAPI.swift */,
-				E65E2CDC20EFBDE100EB134B /* APIConfiguration.swift */,
 				E65E2CDE20EFC04500EB134B /* User.swift */,
 				E65E2CDA20EFBC9000EB134B /* Constants.swift */,
 				E65E2CD620EDF99500EB134B /* Repo.swift */,
@@ -401,7 +398,6 @@
 				E66C128220EDE81C00AB3A22 /* AppDelegate.swift in Sources */,
 				E65E2CDF20EFC04500EB134B /* User.swift in Sources */,
 				E65E2CD520EDF7C100EB134B /* DetailViewController.swift in Sources */,
-				E65E2CDD20EFBDE100EB134B /* APIConfiguration.swift in Sources */,
 				E65E2CDB20EFBC9000EB134B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
