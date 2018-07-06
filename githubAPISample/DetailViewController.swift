@@ -12,17 +12,17 @@ import Alamofire
 
 class DetailViewController: UIViewController {
 
-    var targetURL: String?
     var name: String?
     var user: User?
     @IBOutlet private weak var idLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var followURLLabel: UILabel!
     @IBOutlet private weak var followedURLLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "詳細"
+        //非同期でのデータ通信
         DispatchQueue.global().async {
             if let name = self.name {
                 let router = APIRouter.user(name: name)
@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
                         let decoder = JSONDecoder()
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
                         self.user = try! decoder.decode(User.self, from: data!)
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { //得られたデータの描写
                             if let user = self.user {
                                 self.idLabel.text = "ID: " + String(user.id)
                                 self.nameLabel.text = "名前：" + user.login

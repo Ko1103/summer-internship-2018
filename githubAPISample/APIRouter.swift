@@ -9,55 +9,35 @@
 import Foundation
 import Alamofire
 
-
-//class WebAPI {
-//
-//    static let baseURL = "https://api.github.com/"
-//
-//    static func get(path: String) {
-//        var data: Data? = nil
-//        Alamofire.request("https://api.github.com/events" + "path").responseJSON { (response) in
-//            print("Request" + String(describing: response.result))
-//            print("Request" + String(describing: response.response))
-//            if let json = response.result.value {
-//                print("JSON: \(json)")
-//            }
-//            data = response.data
-//        }
-//    }
-//}
-
+//GitHubのAPIのルーティング
 enum APIRouter: URLRequestConvertible {
     
-    case users
-    case user(name: String)
-    case repo(id: String)
+    case users //ユーザー一覧の取得
+    case user(name: String)//１ユーザーの取得
     
+    ///それぞれのケースでのHTTPメソッドの指定
     private var method: HTTPMethod {
         switch self {
         case .users:
             return .get
         case .user:
             return .get
-        case .repo:
-            return .get
         }
     }
     
+    /// アクセス先のPathを保持
     private var path: String {
         switch self {
         case .users:
             return "/users"
         case .user(let name):
             return "/users/\(name)"
-        case .repo(let id):
-            return "/repos/\(id)"
         }
     }
     
+    /// 生成したAPIをリクエストの形にして返す関数
     func asURLRequest() throws -> URLRequest {
         let url = try K.ProductionServer.baseURL.asURL()
-        
         var urlRequest = URLRequest(url: url.appendingPathComponent(self.path))
         urlRequest.httpMethod = self.method.rawValue
         return urlRequest

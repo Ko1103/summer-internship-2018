@@ -23,11 +23,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if error == nil {
                     let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase //取得したデータはSnakeCaseなのでそれをCamelCaseに変換
                     let jsonData = try! decoder.decode([User].self, from: data!)
                     self.users = jsonData
                     DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                        self.tableView.reloadData() //取得したデータの表示
                     }
                 }
             }).resume()
