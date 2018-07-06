@@ -8,29 +8,33 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class DetailViewController: UIViewController {
 
+    var targetURL: String?
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var followURLLabel: UILabel!
+    @IBOutlet weak var followedURLLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "詳細"
+        DispatchQueue.global().async {
+            if let targetURL = self.targetURL {
+                Alamofire.request(targetURL).responseJSON { (response) in
+                    guard let data = response.result.value else { return }
+                    print(data)
+                    let jsonData = JSON(data)
+                    DispatchQueue.main.async {
+                        self.idLabel.text = "name: " + jsonData["name"].description
+                        self.followURLLabel.text = "language: " + jsonData["language"].rawString()!
+                        self.followedURLLabel.text = "network:  " + jsonData["network_count"].rawString()!
+                    }
+                }
+            }
+        }
+       
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
