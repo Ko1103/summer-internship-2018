@@ -18,6 +18,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //非同期通信でデータの取得s
         DispatchQueue.global().async {
             let router = APIRouter.users
             let request = try! router.asURLRequest()
@@ -36,7 +37,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sender = self.repos[indexPath.row].url
+        let sender = self.users[indexPath.row].login
         self.performSegue(withIdentifier: "detail", sender: sender)
     }
     
@@ -62,7 +63,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detail" {
             let next: DetailViewController = segue.destination as! DetailViewController
-            next.targetURL = sender as! String
+            next.name = sender as! String
         }
         
     }
