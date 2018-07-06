@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -18,7 +17,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //非同期通信でデータの取得s
+        //非同期通信でデータの取得
         DispatchQueue.global().async {
             let router = APIRouter.users
             let request = try! router.asURLRequest()
@@ -46,9 +45,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let data = self.users[indexPath.row]
         cell.textLabel?.text = String(data.id)
         cell.detailTextLabel?.text = data.login
-//        let data = self.repos[indexPath.row]
-//        cell.textLabel?.text = String(data.id)
-//        cell.detailTextLabel?.text = data.name
         return cell
     }
     
