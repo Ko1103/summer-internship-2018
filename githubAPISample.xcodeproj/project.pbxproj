@@ -11,7 +11,8 @@
 		A903B51290321611B5849346 /* Pods_githubAPISample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923CE305A20AD08C7B4F63F4 /* Pods_githubAPISample.framework */; };
 		D685FEEC70A3A713268F9596 /* Pods_githubAPISampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DF568FCB1A379603A82971 /* Pods_githubAPISampleUITests.framework */; };
 		E65E2CD520EDF7C100EB134B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CD420EDF7C100EB134B /* DetailViewController.swift */; };
-		E65E2CD720EDF99500EB134B /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CD620EDF99500EB134B /* Repo.swift */; };
+		E65E2CDB20EFBC9000EB134B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CDA20EFBC9000EB134B /* Constants.swift */; };
+		E65E2CDF20EFC04500EB134B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E2CDE20EFC04500EB134B /* User.swift */; };
 		E66C128220EDE81C00AB3A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C128120EDE81C00AB3A22 /* AppDelegate.swift */; };
 		E66C128420EDE81C00AB3A22 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C128320EDE81C00AB3A22 /* ListViewController.swift */; };
 		E66C128720EDE81C00AB3A22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66C128520EDE81C00AB3A22 /* Main.storyboard */; };
@@ -19,7 +20,7 @@
 		E66C128C20EDE81E00AB3A22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66C128A20EDE81E00AB3A22 /* LaunchScreen.storyboard */; };
 		E66C129720EDE81E00AB3A22 /* githubAPISampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C129620EDE81E00AB3A22 /* githubAPISampleTests.swift */; };
 		E66C12A220EDE81F00AB3A22 /* githubAPISampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C12A120EDE81F00AB3A22 /* githubAPISampleUITests.swift */; };
-		E66C12B020EDEA9400AB3A22 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C12AF20EDEA9400AB3A22 /* WebAPI.swift */; };
+		E66C12B020EDEA9400AB3A22 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66C12AF20EDEA9400AB3A22 /* APIRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,8 @@
 		9A0D1E8577F331F1B2291E94 /* Pods-githubAPISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubAPISample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-githubAPISample/Pods-githubAPISample.debug.xcconfig"; sourceTree = "<group>"; };
 		9F6B70145DCDC84E968ADF6B /* Pods-githubAPISampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubAPISampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-githubAPISampleUITests/Pods-githubAPISampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E65E2CD420EDF7C100EB134B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		E65E2CD620EDF99500EB134B /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		E65E2CDA20EFBC9000EB134B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E65E2CDE20EFC04500EB134B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E66C127E20EDE81C00AB3A22 /* githubAPISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubAPISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66C128120EDE81C00AB3A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66C128320EDE81C00AB3A22 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		E66C129D20EDE81F00AB3A22 /* githubAPISampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = githubAPISampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66C12A120EDE81F00AB3A22 /* githubAPISampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubAPISampleUITests.swift; sourceTree = "<group>"; };
 		E66C12A320EDE81F00AB3A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E66C12AF20EDEA9400AB3A22 /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		E66C12AF20EDEA9400AB3A22 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		E72D21D2572A7A7679F4AC96 /* Pods-githubAPISampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubAPISampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-githubAPISampleUITests/Pods-githubAPISampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +152,9 @@
 				E66C128820EDE81E00AB3A22 /* Assets.xcassets */,
 				E66C128A20EDE81E00AB3A22 /* LaunchScreen.storyboard */,
 				E66C128D20EDE81E00AB3A22 /* Info.plist */,
-				E66C12AF20EDEA9400AB3A22 /* WebAPI.swift */,
-				E65E2CD620EDF99500EB134B /* Repo.swift */,
+				E66C12AF20EDEA9400AB3A22 /* APIRouter.swift */,
+				E65E2CDA20EFBC9000EB134B /* Constants.swift */,
+				E65E2CDE20EFC04500EB134B /* User.swift */,
 			);
 			path = githubAPISample;
 			sourceTree = "<group>";
@@ -313,12 +316,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-githubAPISample/Pods-githubAPISample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -387,10 +388,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E66C128420EDE81C00AB3A22 /* ListViewController.swift in Sources */,
-				E66C12B020EDEA9400AB3A22 /* WebAPI.swift in Sources */,
-				E65E2CD720EDF99500EB134B /* Repo.swift in Sources */,
+				E66C12B020EDEA9400AB3A22 /* APIRouter.swift in Sources */,
 				E66C128220EDE81C00AB3A22 /* AppDelegate.swift in Sources */,
+				E65E2CDF20EFC04500EB134B /* User.swift in Sources */,
 				E65E2CD520EDF7C100EB134B /* DetailViewController.swift in Sources */,
+				E65E2CDB20EFBC9000EB134B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
