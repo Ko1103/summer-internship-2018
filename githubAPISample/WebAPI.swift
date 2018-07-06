@@ -12,7 +12,9 @@ import Alamofire
 
 class WebAPI {
     
-    static func get(path: String) -> Data? {
+    static let baseURL = "https://api.github.com/"
+    
+    static func get(path: String) {
         var data: Data? = nil
         Alamofire.request("https://api.github.com/events" + "path").responseJSON { (response) in
             print("Request" + String(describing: response.result))
@@ -22,37 +24,37 @@ class WebAPI {
             }
             data = response.data
         }
-        return data
     }
 }
 
-
-//
-//typealias Input = Request
-//
-//typealias Request = (
-//    url: URL,
-//    queries: [URLQueryItem],
-//    headers: [String: String],
-//    methodAndPayload: HTTPMethodAndPayload
-//)
-//
-//enum HTTPMethodAndPayload {
-//    case get
-//    var method: String {
-//        switch self {
-//        case .get:
-//            return "GET"
-//        }
-//    }
-//
-//    var body: Data? {
-//        switch self {
-//        case .get:
-//            return nil
-//        }
-//    }
-//}
-//
-//
-//
+enum APIRouter: URLRequestConvertible {
+    
+    case users
+    case user(name: String)
+    case repo(id: String)
+    
+    private var method: HTTPMethod {
+        switch self {
+        case .users:
+            return .get
+        case .user:
+            return .get
+        case .repo:
+            return .get
+        }
+    }
+    
+    private var path: String {
+        switch self {
+        case .users:
+            return "/users"
+        case .user(let name):
+            return "/users/\(name)"
+        case .repo(let id):
+            return "/repos/\(id)"
+        }
+    }
+    
+    func asURLRequest() throws -> URLRequest {
+    }
+}

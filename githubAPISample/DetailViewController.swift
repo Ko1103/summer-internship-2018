@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+//
 class DetailViewController: UIViewController {
 
     var targetURL: String?
