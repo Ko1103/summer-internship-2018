@@ -10,22 +10,22 @@ import Foundation
 import Alamofire
 
 
-class WebAPI {
-    
-    static let baseURL = "https://api.github.com/"
-    
-    static func get(path: String) {
-        var data: Data? = nil
-        Alamofire.request("https://api.github.com/events" + "path").responseJSON { (response) in
-            print("Request" + String(describing: response.result))
-            print("Request" + String(describing: response.response))
-            if let json = response.result.value {
-                print("JSON: \(json)")
-            }
-            data = response.data
-        }
-    }
-}
+//class WebAPI {
+//
+//    static let baseURL = "https://api.github.com/"
+//
+//    static func get(path: String) {
+//        var data: Data? = nil
+//        Alamofire.request("https://api.github.com/events" + "path").responseJSON { (response) in
+//            print("Request" + String(describing: response.result))
+//            print("Request" + String(describing: response.response))
+//            if let json = response.result.value {
+//                print("JSON: \(json)")
+//            }
+//            data = response.data
+//        }
+//    }
+//}
 
 enum APIRouter: URLRequestConvertible {
     
@@ -59,6 +59,7 @@ enum APIRouter: URLRequestConvertible {
         let url = try K.ProductionServer.baseURL.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(self.path))
+        urlRequest.httpMethod = self.method.rawValue
         return urlRequest
     }
 }
